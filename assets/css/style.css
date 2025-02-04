@@ -1,0 +1,56 @@
+html {
+	background : linear-gradient(to bottom right, #ffcc99 0%, #cc99ff 100%);
+	font-size:14px;
+	margin : auto;
+}
+
+h1 {
+	color:#810d6f;
+    font-size:3em;
+}
+
+ h2 {
+    color:#810d6f;
+    font-size:2em;
+ } 
+ 
+h3 {
+	color:#810d6f;
+}
+ 
+#page {
+	background: rgba(255, 255, 255, 0.7);
+	border: 5px solid purple;
+	width: 55%;
+    margin: 50px auto;
+}
+
+.entete {
+	margin : auto;
+	text-align : center;
+}
+
+#aboutme {
+	font-family : system-ui;
+	padding : 50px; 
+}
+
+footer {
+	text-align : center; 
+	border-top : 2px solid purple;
+}
+
+img {
+	width : 15%;
+}
+
+table, td {
+	border : 1px solid black;
+	text-align : center;
+}
+
+th {
+	background-color : #ebdef0;
+	color : purple;
+	border : 1px solid black;
+}	
