@@ -1,7 +1,6 @@
 html {
 	background : linear-gradient(to bottom right, #ffcc99 0%, #cc99ff 100%);
 	font-size:14px;
-	margin : auto;
 }
 
 h1 {
@@ -22,7 +21,7 @@ h3 {
 	background: rgba(255, 255, 255, 0.7);
 	border: 5px solid purple;
 	width: 55%;
-    margin: 50px auto;
+    	margin: 50px auto;
 }
 
 .entete {
