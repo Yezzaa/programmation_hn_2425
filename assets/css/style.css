@@ -1,5 +1,5 @@
 html {
-	background : linear-gradient(to bottom right, #ffcc99 0%, #cc99ff 100%);
+	background : linear-gradient(to bottom right, #ffcc99 0%, #cc99ff 100%); /*dégradé de couleur*/
 	font-size:14px;
 }
 
@@ -11,17 +11,17 @@ h1 {
  h2 {
     color:#810d6f;
     font-size:2em;
- } 
+} 
  
 h3 {
 	color:#810d6f;
 }
  
 #page {
-	background: rgba(255, 255, 255, 0.7);
+	background: rgba(255, 255, 255, 0.7); /* couleur rose */
 	border: 5px solid purple;
 	width: 55%;
-    	margin: 50px auto;
+    margin: 50px auto;
 }
 
 .entete {
@@ -53,3 +53,38 @@ th {
 	color : purple;
 	border : 1px solid black;
 }	
+
+#container {
+	background-color: white;
+	border: 3px solid black;
+	padding: 2px;
+	padding-bottom: 5%; 
+	width: 80%;
+	margin-left:10%;
+	height: 100%;
+	min-height: 100%;
+	position: relative;
+}
+
+#Global {
+margin-right: auto;
+margin-left: auto;
+width: 80%;
+border: 3px;
+display:table;
+}
+#Global #fileDisplayArea {
+float:left;
+width:48%;
+background: #FFF;
+font-size:0.7em;
+height:200px;
+overflow:scroll;
+}
+#Global #page-analysis {
+font-size:0.7em;
+margin-left:52%;
+background: #FFF;
+height:200px;
+overflow:scroll;
+}
