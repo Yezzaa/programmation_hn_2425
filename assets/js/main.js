@@ -346,6 +346,7 @@ function MotsLesPlusLongs() {
 }
  
 // Pie Chart (mots les plus fréquents, moins les stopwords) --------------------------------------------------
+// Nous nous sommes inspirés du modèle proposé par M. BRIGLIA en complétant les xx et en apportant certaines modifications tels que le nom des id ou des variables. 
 function pieChart() {
     var fileArea = document.getElementById('fileDisplayArea'); // on stocke dans la variable fileArea le texte chargé
     var stopwordInput = document.getElementById('stopwordID'); // on stocke les stopwords saisit par l'utilisateur dans le champ prévu à cet effet. 
