@@ -1,16 +1,18 @@
 html {
-	background : linear-gradient(to bottom right, #ffcc99 0%, #cc99ff 100%); /*dégradé de couleur*/
-	font-size:14px;
+	background : linear-gradient(to bottom right, #ffcc99 0%, #cc99ff 100%); /*dégradé de couleur - utilisation de cette ressource : https://www.w3schools.com/colors/colors_gradient.asp*/
+	font-size:15px; /* font-size détermine la taille du texte */
 }
 
 h1 {
-	color:#810d6f;
-    font-size:3em;
+	color:#810d6f; /* color permet d'indiquer la couleur du texte */
+    font-size:3em; 
+	text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3, 0px 0px 20px #b393d3; /* cela permet d'ajouter de l'ombre au niveau des caractères du texte */
 }
 
  h2 {
     color:#810d6f;
     font-size:2em;
+	text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3, 0px 0px 20px #b393d3;
 } 
  
 h3 {
@@ -19,27 +21,37 @@ h3 {
  
 #page {
 	background: rgba(255, 255, 255, 0.7); /* couleur rose */
-	border: 5px solid purple;
-	width: 55%;
-    margin: 50px auto;
+	border: 5px solid purple; /* permet de définir la taille, le style ou encore la couleur d'une bordure - ressource : https://developer.mozilla.org/fr/docs/Web/CSS/border */ 
+	width: 70%; /* width permet de définir la largeur d'un élément - ressource : https://developer.mozilla.org/fr/docs/Web/CSS/width */ 
+    margin: 50px auto;  /* permet de définir la taille des marges à l'extérieur de l'élément - ressource : https://developer.mozilla.org/fr/docs/Web/CSS/margin */
 }
 
-.entete {
-	margin : auto;
-	text-align : center;
+.entete { /* le point permet de faire appel à la classe entete définit dans le html. */ 
+	margin : auto; 
+	text-align : center; /* text-align permet d'aligner horizontalement un texte */  
 }
 
 #aboutme {
 	font-family : system-ui;
-	padding : 50px; 
+	padding : 20px; /* en comparaison avec margin, padding permet de créer un espace supplémentaire à l'intérieur de l'élément - ressource : https://developer.mozilla.org/fr/docs/Web/CSS/margin */
+	width :	50%;
+	margin : 30px auto;
+	border: 2px solid purple;
 }
 
+#button_aboutme, #button_bienvenue {
+	background : linear-gradient(to bottom right, #ffcc99 0%, #cc99ff 100%);
+	border: 2px solid purple;
+	padding: 2px;
+	border-radius: 5px; /*border-radius permet de donner des côtés arrondis au bouton */
+}
+	
 footer {
 	text-align : center; 
 	border-top : 2px solid purple;
 }
 
-img {
+#avatar {
 	width : 15%;
 }
 
@@ -57,8 +69,8 @@ th {
 #container {
 	background-color: white;
 	border: 3px solid black;
-	padding: 2px;
-	padding-bottom: 5%; 
+	padding: 20px;
+	padding-bottom: 5%;  /*padding-bottom ajoute un espace à l'intérieur d'un élément, entre son contenu et son bord inférieur */
 	width: 80%;
 	margin-left:10%;
 	height: 100%;
@@ -73,6 +85,7 @@ width: 80%;
 border: 3px;
 display:table;
 }
+
 #Global #fileDisplayArea {
 float:left;
 width:48%;
@@ -81,10 +94,127 @@ font-size:0.7em;
 height:200px;
 overflow:scroll;
 }
+
 #Global #page-analysis {
-font-size:0.7em;
+font-size:0.9em;
 margin-left:52%;
 background: #FFF;
 height:200px;
 overflow:scroll;
+}
+
+#chartContainer {
+	padding-top: 5%;
+}
+
+#bienvenue {
+	font-family : system-ui;
+	padding : 1%;
+	margin : 1%;
+}
+
+.submit {
+	background : linear-gradient(to bottom right, #ffcc99 0%, #cc99ff 100%);
+	border-radius: 5px;
+	
+}
+
+.mylabel {
+	background-color: #a070a1;
+	font-family: arial,helvetica,sans-serif;
+	font-variant: small-caps;
+	font-size: 90%;
+	padding: 2px;
+	border-right: 1px solid #724060;
+	border-bottom: 1px solid #724060;
+	border-radius: 50% 20% / 10% 40%;
+}
+
+/*Cette partie permet de styliser le bouton Salut qui est relié par la class 'special' */
+/* on définit le style de base du bouton en indiquant la couleur de fond, la position, la taille... */
+.special{
+  position: relative;
+  padding: 0.9em 0.9em;
+  border: none;
+  background-color:transparent;
+  cursor: pointer; /* permet de définir un pointeur lorsqu'on survole le bouton */
+  outline: none;
+  font-size: 12px;
+  margin: 2em 0.4em;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+/* cela permet de créer des coins animés avec des bordures qui sont partiellement visibles */
+.special::after,
+.special::before{
+	content: '';
+	position: absolute;
+	display:block;
+	width: 60%;
+	height: 40%;
+	border: 5px solid;
+   	transition: all 0.5s ease;
+   	border-radius: 6px;
+}
+/* ici c'est le coin en bas à droite qui a des bordures visibles en bas et à droite */
+.special::after{
+      bottom: 0;
+      right: 0;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-bottom-color: #c39bd3; /*changement de la couleur - violet clair */
+      border-right-color: #c39bd3;
+     }
+/* ici c'est le coin à gauche en haut qui a des bordures visibles en haut et à gauche */  
+.special::before{
+      top: 0;
+      left: 0;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      border-top-color: #a569bd; /* changement de la couleur - violet foncé */
+      border-left-color: #a569bd;
+}
+
+/* ici cela permet d'agrandir les coins en un cadre complet lors du survol */
+/* hover permet de définir des styles quand l'utilisateur survole un élément - ressource : https://developer.mozilla.org/fr/docs/Web/CSS/:hover */
+/* before et after vont permettre d'ajouter du contenu avant ou après l'élément  */
+.special:hover:after, 
+.special:hover:before{
+      width: 100%;
+      height: 100%;
+}
+
+/*BOUTON FOOTER */
+/* Cette partie a été reprise du modèle proposé par M. BRIGLIA - j'ai modifié la couleur de fond et la taille du bouton au niveau de width et height */
+/* Ici on définit le style du bouton */
+.rainbowBtn {
+	display: block;
+	margin: auto;
+	width: 150px;                
+	height: 45px;               
+	text-align: center;
+	line-height: 45px;          
+	color: #fff;
+	font-size: 13px;         
+	text-decoration: none;
+	font-family: "Lucida Console", "Courier New", monospace;
+	box-sizing: border-box;
+	background: linear-gradient(to bottom right, #ffcc99 0%, #cc99ff 100%);
+	background-size: 400%;
+	border-radius: 20px;       
+	z-index: 1;
+}
+/* Ici on définit l'animation au survol */
+.rainbowBtn:hover {
+	animation: animate 8s linear infinite;
+}
+
+/* Ici on indique le déplacement de l'animation */
+@keyframes animate {
+	0% {
+		background-position: 0%;
+	}
+	100% {
+		background-position: 400%;
+	}
 }

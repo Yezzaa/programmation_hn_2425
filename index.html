@@ -3,22 +3,30 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- la balise meta viewport permet de contrôler la mise en page sur mobile - ressource : https://developer.mozilla.org/fr/docs/Web/HTML/Guides/Viewport_meta_element-->
 		<link rel="stylesheet" href="assets/css/style.css">
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/canvasjs.min.js"></script>
+		<title>Projet site WEB</title> <!-- La balise title donne le titre de la page HTML - ressource : https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/title -->
+		<link rel="icon" href="assets/img/favicon.jpg" type="image/icon type"> <!-- L'attribut rel="icon" renvoie à l'icône présentant le site dans l'onglet - ressource : https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/link -->
     </head>
+	
+<img src="assets/img/logo.jpg" alt="logoUSN" width="5%"/>
 
     <body>
-<div id="page">
-	<div class="entete">
-		<h1>Yezza LASSILAA</h1>
+<div id="page"> <!-- La balise div correspond à une division du contenu du texte et l'élément id donne un identifiant unique à cette division - ressources : https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/div & https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Global_attributes/id-->
+	<div class="entete"> <!-- L'attribut class permet d'appliquer un ou plusieurs styles définis dans une feuille CSS - ressource : https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Global_attributes/class-->
+		<h1>Yezza</h1> <!-- heading=en-tête, de type 1  -->
 		<h2>Licence 3 des Sciences du Langage</h2>
-		<img src="assets/img/logo.jpg"/><img src="assets/img/fleurs.jpg"/>
+		<img id="avatar" src="assets/img/fleurs.jpg" alt="avatar"/> <!-- alt sert à afficher la description de l'image, si jamais cette dernière n'est pas visualisée correctement par le navigateur -->
 	</div>
-<div id="aboutme">
-		<h3>A propos de moi</h3>
+	<br/>
+
+<center><button id="button_aboutme" onclick="showHide_aboutme()">Plus d'infos sur moi</button></center> <!-- La balise <button> crée un bouton cliquable en HTML et l'attribut onclick définit la fonction à exécuter lorsqu'on clique dessus - ressource : https://www.w3schools.com/jsref/event_onclick.asp  -->
+<div id="aboutme" style="display: none;"> <!-- L'attribut style="display: none;" sert à cacher un élément sans le supprimer, pour pouvoir le réafficher facilement avec CSS ou JavaScript - ressource : https://www.w3schools.com/jsref/prop_style_display.asp-->
+		<center><h3>A propos de moi</h3></center>
 		<p>Mon CV des trois dernières années :</p>
-<table>
+<table> <!-- La balise <table> sert à afficher des données dans un tableau, avec <thead> pour l'en-tête, <th> pour les cellules d'en-tête, <tbody> pour le contenu, <tr> pour les lignes et <td> pour les cellules - ressource : https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/table--> 
 	<thead>
         <tr><th>année universitaire</th><th>Statut</th></tr>
     </thead>
@@ -30,38 +38,48 @@
 </table>
 
 <p>Voici les cinq derniers livres que j'ai lu :</p>
-<ol>
-    <li><i>Ainsi résonne l'écho infini des montagnes</i>, Khaled HOSSEINI, 10/18</li>
-    <li><i>La librairie de Téhéran</i>, Marjan KAMALI, Hauteville</li>
+<ol> <!-- ol sert à afficher une liste ordonnée --> 
+    <li><i>Ainsi résonne l'écho infini des montagnes</i>, Khaled HOSSEINI, 10/18</li> <!-- La balise <li> sert à définir chaque élément de liste. - ressource : https://www.w3schools.com/tags/tag_ol.asp -->
+    <li><i>La librairie de Téhéran</i>, Marjan KAMALI, Hauteville</li> <!-- La balise <i> sert à mettre du texte en italique pour mettre en valeur un mot. - ressource : https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/i -->
     <li><i>Khalil</i>, Yasmina KHADRA, Pocket</li>
     <li><i>Je suis né un jour bleu</i>, Daniel TAMMET, Les Arènes</li>
     <li><i>Les vertus de l'échec</i>, Charles PEPIN, Allary Editions</li>
 </ol>
-
-<label for="prenom">Comment vous appelez-vous ?</label>
-<input type="text" id="prenom" placeholder="Votre nom">
-<button onclick="appel()">Bonjour...</button>
-
-<p><button id="boutonaide" onclick="Aide ()">Afficher l'aide</button>
-<p id="aide"></p></p>
-
-<h2>Exercice 4 : Segmentation</h2>
+</div>
+	<div id="bienvenue">
+		<label for="prenom" class="mylabel">Comment vous appelez-vous ?</label>
+		<input type="text" id="prenom" placeholder="Votre nom">
+		<button id="button_bienvenue" onclick="appel()">Bonjour...</button>
+	</div>
 <br/>
-<textarea id="texteExercice4" name="mon_texte" rows="10" cols="50">Ici, on entre du texte qu'on va segmenter en "mots".</textarea>
 <br/>
-<button onclick="exercice4()">Segmenter le texte dans un tableau.</button>
-<div id="exercice4Resultat"></div>
 <br/>
-
 <div id="container">
-            <h1 style="text-align:center;">Analyse des <span style="color:green">données</span> dans un fichier</h1>
+            <h1 style="text-align:center;">Analyse des données dans un fichier</h1>
+<center><button id="btnAide" class="submit" onclick="Aide()">Afficher l'aide</button></center>
+                    <div id="aide" style="display:none;">
 
+                        <p><i>Voici un mode d'emploi :</i>
+                            <ul> <!-- ul sert à afficher une liste avec des puces --> 
+                                <li>Etape 1 : Chargez un texte au format .txt à l'aide du bouton Parcourir.</li>
+                                <li>Etape 2 (facultatif) : Précisez les délimiteurs de votre choix puis cliquez sur le bouton Segmentation.</li>
+                                <li>Le bouton Dictionnaire : permet d'obtenir un tableau qui classe les tokens de façon décroissante en fonction du nombre d'occurences.</li>
+                                <li>Le bouton GREP : Entrez un pôle (une regex ou un mot) puis cliquez sur GREP pour obtenir le tableau des lignes d'occurences.</li>
+                                <li>Le bouton Concordancier : Entrez un pôle (une regex ou un mot) et une longueur de contexte puis cliquez sur Concordancier pour obtenir un tableau avec le contexte gauche et droit du pôle recherché.</li>
+                                <li>Le bouton Nombre de phrases : cliquez et il affichera le nombre de phrases.</li>
+                                <li>Le bouton Mots les plus longs : cliquez et il affichera les 10 mots les plus longs du texte.</li>
+                                <li>Le bouton Pie Chart : Saisissez des stopwords et cliquez sur le bouton pour afficher un graphique des 30 mots les plus fréquents dans le texte hors stopwords.</li>
+                                <li>Le bouton SURPRISE : il permet de faire afficher les mots du texte à l'envers.</li>
+                            </ul>
+                        </p>
+                    </div>
+					<br/>
             <div id="page-wrapper">
-                <div>
+                <div >
                     <span>
                         <label for="fileInput" class="btn"><small>Sélectionner un fichier au format .txt
                                 :</small></label>
-                        <input id="fileInput" type="file" accept="text/plain" name="Fichier (.txt)" />
+                        <input id="fileInput" type="file" accept="text/plain" name="Fichier (.txt)"/>
                     </span>
                 </div>
                 <br />
@@ -69,7 +87,7 @@
                     <small>
                         <label for="delimID" class="mylabel">Délimiteur(s)</label>
                         &nbsp;
-                        <input type="text" value="," name="delim" id="delimID" size="40" />
+                        <input type="text" value=" ,;’'~|&#@=`%*$()[]{}_:+«»§\/!?." name="delim" id="delimID" size="40" />
                     </small>
                     <br />
                     <small>
@@ -83,31 +101,43 @@
                         &nbsp;
                         <input type="text" value="10" name="lg" id="lgID" size="10" />
                     </small>
+					&nbsp;
+					<br/>
+					<br/>
+					<small>
+                        <label for="stopwordID" class="mylabel"> Mots grammaticaux, Stopwords en anglais</label>
+                        &nbsp;
+                        <input type="text" value="de,le,la,les,à,et,des,un,une,du,que,en,l,que,qu,d,s,se,ne,n,ce,me,sa" name="stopwords" id="stopwordID" size="60" />
+                    </small>
                     <br />
                     <br />
-                    <button onclick="alert('Salut et bienvenue sur mon site !');"><span>Salut</span></button>
+                    <button class="special" onclick="alert('Salut et bienvenue sur mon site !');"><span>Salut</span></button>
                     <br />
                     <br />
                     <button class="submit" onclick="segmentation()"><span>Segmentation</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !');"><span>action 1</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 2</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 3</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 4</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 5</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 6</span></button>
+                    <button class="submit" onclick="dictionnaire()"><span>Dictionnaire</span></button>
+                    <button class="submit" onclick="GREP()"><span>GREP</span></button>
+                    <button class="submit" onclick="Concordancier()"><span>Concordancier</span></button>
+                    <button class="submit" onclick="motsinverses()"><span>SURPRISE</span></button>
+                    <button class="submit" onclick="nombrePhrases()"><span>Nombre de phrases</span></button>
+                    <button class="submit" onclick="MotsLesPlusLongs()"><span>Mots les plus longs</span></button>
+					<button class="submit" onclick="pieChart()"><span>grapheCamembert-Pie Chart</span></button>
                 </p>
             </div>
             <div id="logger" style="width:100%"></div>
-            <br />
+            <br/>
+			<div id="logger3" style="width:100%"></div>
+			<br/>
             <div id="Global">
                 <div id="fileDisplayArea"></div>
                 <div id="page-analysis"></div>
+				<div id="chartContainer" style="height: 300px; width: 100%;"></div>
             </div>
         </div>
 
-</div>
-<footer>
-  <p><a href="http://www.univ-paris3.fr/">Lien vers le site de Sorbonne Nouvelle.</a></p>
+<br/>
+<footer> <!-- footer correspond au pied de la page HTML - ressource : https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/footer -->
+  <p><a href="http://www.univ-paris3.fr/" class="rainbowBtn">Site Paris 3</a></p>
 </footer>
 </div>
     </body>
